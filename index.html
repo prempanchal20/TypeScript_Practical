@@ -2,14 +2,131 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TypeScript Practical</title>
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/calculator.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Scientific Calculator</title>
 </head>
 
 <body>
-    <h3>TypeScript</h3>
+    <section class="main">
+        <div class="calculator">
+            <div class="calculator_input">
+                <input type="text" placeholder="0">
+            </div>
+
+            <div class="calculator_keys">
+                <div class="degToRad rows">
+                    <button class="keys" id="deg">DEG</button>
+                    <button class="keys">F-E</button>
+                </div>
+
+                <div class="rows">
+                    <button class="keys" id=mc>MC</button>
+                    <button class="keys" id=mr>MR</button>
+                    <button class="keys">M+</button>
+                    <button class="keys">M-</button>
+                    <button class="keys">MS</button>
+                </div>
+
+                <div class="rows trigno-func">
+                    <button class="trigonometry">
+                        <img src="https://img.icons8.com/ios-glyphs/30/null/trigonometry.png"
+                            alt="Trigonometry" />Trigonometry<i class="down-array fa-solid fa-chevron-down"></i>
+                        <ul class="dropdown menu" id="dropdown-menu">
+                            <li id="sin">Sin</li>
+                            <li id="cos">Cos</li>
+                            <li id="tan">Tan</li>
+                        </ul>
+                    </button>
+
+                    <button class="func">
+                        <img src="https://img.icons8.com/ios-glyphs/30/null/frequency-f.png" alt="function" />Function
+                        <i class="down-array fa-solid fa-chevron-down"></i>
+                        <ul class="dropdown func" id="dropdown-func">
+                            <li id="round">Round</li>
+                            <li id="ceil">Ceil</li>
+                            <li id="floor">Floor</li>
+                        </ul>
+                    </button>
+                </div>
+
+                <div class="rows">
+                    <button class="square_fun" id="square">2<sup>nd</sup>
+                        <ul class="dropdown keys">
+                            <li>2<sup>n</sup></li>
+                            <li>3<sup>n</sup></li>
+                            <li>∛x</li>
+                            <li>n<sup>3</sup></li>
+                        </ul>
+                    </button>
+                    <button class="button" id="pi">&pi;</button>
+                    <button class="button" id="e">e</button>
+                    <button class="button" id="C">C</button>
+                    <button class="button" id="backspace">
+                        <i class="material-icons">&#xe14a;</i>
+                    </button>
+                </div>
+
+                <div class="rows">
+                    <button class="button" id="square">x<sup>2</sup></button>
+                    <button class="button" id="inverse">1/x</button>
+                    <button class="button">|x|</button>
+                    <button class="button">exp</button>
+                    <button class="button">mod</button>
+                </div>
+
+                <div class="rows">
+                    <button class="button" id="root">√</button>
+                    <button class="button" id="inverse">(</button>
+                    <button class="button">)</button>
+                    <button class="button" id="factorial">n!</button>
+                    <button class="button">&#247;</button>
+                </div>
+
+                <div class="rows">
+                    <button class="button">
+                        <span style="height: 10px" id="xpower">x</span><sup>y</sup>
+                    </button>
+                    <button class="button" id="7">7</button>
+                    <button class="button" id="8">8</button>
+                    <button class="button" id="9">9</button>
+                    <button class="button operator" id="multiply">x</button>
+                </div>
+
+                <div class="rows">
+                    <button class="button" id="power10">10 <sup id="power10">x</sup></button>
+                    <button class="button" id="4">4</button>
+                    <button class="button" id="5">5</button>
+                    <button class="button" id="6">6</button>
+                    <button class="button operator" id="subtract">-</button>
+                </div>
+
+                <div class="rows">
+                    <button class="button" id="log">log</button>
+                    <button class="button" id="1">1</button>
+                    <button class="button" id="2">2</button>
+                    <button class="button" id="3">3</button>
+                    <button class="button operator" id="add">+</button>
+                </div>
+
+                <div class="rows">
+                    <button class="button" id="ln">ln</button>
+                    <button class="button operator" id="addition">+/-</button>
+                    <button class="button" id="0">0</button>
+                    <button class="button" id="decimal">.</button>
+                    <button class="button operator" id="equals">=</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  background-color: white;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.calculator {
+  background-color: #f2f2f2;
+  width: 500px;
+  padding: 2px;
+}
+
+.calculator_input {
+  width: 100%;
+  padding: 5px;
+}
+
+.calculator_input input[type="text"] {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  text-align: right;
+  border: 0px;
+  outline: none;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.calculator_keys .rows button {
+  padding: 10px;
+  border: 0px;
+  width: 195px;
+  margin: 2px;
+  height: 50px;
+  background-color: #f7f7f7;
+}
+
+.degToRad {
+  width: 40%;
+}
+
+.keys {
+  background-color: white !important;
+  justify-content: space-around;
+  margin: 15px;
+}
+#mc {
+  opacity: 0.4;
+}
+
+#mr {
+  opacity: 0.4;
+}
+
+#equals {
+  background-color: rgb(96, 183, 233);
+}
+
+.trigonometry {
+  display: flex;
+  align-items: center;
+}
+
+.trigonometry img {
+  padding: 2px;
+}
+
+.func {
+  display: flex;
+  align-items: center;
+}
+.down-array {
+  margin: 5px;
+}
+
+.rows {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rows .trigno-func {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rows .square_fun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trigonometry ul {
+  display: block;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+  left: 1px;
+}
+
+.func ul {
+  display: block;
+  list-style-type: none;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+  left: 5px;
+}
+
+.dropdown.menu li {
+  padding: 3px;
+}
+
+.dropdown.keys li {
+  padding: 3px;
+}
+
+.dropdown.func li {
+  padding: 3px;
+}
+
+.square_fun ul {
+  display: block;
+  list-style-type: none;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.dropdown.menu {
+  position: absolute;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  margin: 5px;
+  z-index: 1;
+}
+
+.dropdown.keys {
+  position: absolute;
+  list-style-type: none;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  margin: 5px;
+  z-index: 1;
+}
+
+.dropdown.func {
+  position: absolute;
+  list-style-type: none;
+  display: none;
+  top: 33px;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  padding: 10px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 1;
+}
+
+.trigonometry {
+  display: flex;
+  position: relative;
+  background: none !important;
+}
+
+.func {
+  display: flex;
+  position: relative;
+  background: none !important;
+}
+
+.square_fun {
+  display: flex;
+  position: relative;
+}
