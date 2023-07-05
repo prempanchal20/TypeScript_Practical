@@ -6,6 +6,15 @@ const dropdown_func = document.querySelector("#dropdown-func") as HTMLElement;
 const trig_btn = document.querySelector(".trigonometry") as HTMLElement;
 const func_btn = document.querySelector(".func") as HTMLElement;
 
+
+//--------------------------------------Disable Alphabets Keyboard Event-----------------------------------//
+
+document.addEventListener('keydown', function (event) {
+    if (/^[A-Za-z]$/.test(event.key)) {
+        event.preventDefault();
+    }
+});
+
 //-------------------------------------------Dropdown Functionality-------------------------------------------//
 
 trig_btn.addEventListener("click", () => {
