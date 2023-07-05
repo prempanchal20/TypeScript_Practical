@@ -21,6 +21,7 @@
   background-color: #f2f2f2;
   width: 500px;
   padding: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .calculator_input {
@@ -57,6 +58,7 @@
   justify-content: space-around;
   margin: 15px;
 }
+
 #mc {
   opacity: 0.4;
 }
@@ -82,6 +84,7 @@
   display: flex;
   align-items: center;
 }
+
 .down-array {
   margin: 5px;
 }
@@ -103,75 +106,32 @@
   align-items: center;
 }
 
-.trigonometry ul {
-  display: block;
-  list-style-type: none;
-  width: 100%;
-  padding: 5px;
-  left: 1px;
-}
-
-.func ul {
-  display: block;
-  list-style-type: none;
-  list-style-type: none;
-  width: 100%;
-  padding: 5px;
-  left: 5px;
-}
-
-.dropdown.menu li {
-  padding: 3px;
-}
-
-.dropdown.keys li {
-  padding: 3px;
-}
-
-.dropdown.func li {
-  padding: 3px;
-}
-
+.trigonometry ul,
+.func ul,
 .square_fun ul {
-  display: block;
-  list-style-type: none;
-  list-style-type: none;
-  width: 100%;
-  padding: 5px;
-}
-
-.dropdown.menu {
-  position: absolute;
   display: none;
-  top: 33px;
+  list-style-type: none;
   background-color: #f9f9f9;
-  min-width: 10px;
+  padding: 5px;
   margin: 5px;
   z-index: 1;
+  min-width: 100%;
+}
+
+.dropdown.menu li,
+.dropdown.keys li,
+.dropdown.func li,
+.square_fun ul li {
+  padding: 3px;
+}
+
+.dropdown.menu, .dropdown.func {
+  top: 35px;
+  position: absolute;
 }
 
 .dropdown.keys {
-  position: absolute;
-  list-style-type: none;
-  display: none;
-  top: 33px;
-  background-color: #f9f9f9;
-  min-width: 10px;
-  margin: 5px;
-  z-index: 1;
-}
-
-.dropdown.func {
-  position: absolute;
-  list-style-type: none;
-  display: none;
-  top: 33px;
-  background-color: #f9f9f9;
-  min-width: 10px;
-  padding: 10px;
-  margin: 5px;
-  padding: 5px;
-  z-index: 1;
+  top: 70px;
 }
 
 .trigonometry {

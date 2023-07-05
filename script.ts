@@ -1,13 +1,12 @@
 const input = document.querySelector("input") as HTMLInputElement;
 const buttons = document.querySelectorAll("button");
-const backspace = document.getElementById("backspace") as HTMLElement;
-const trigonometry = document.getElementById("trigonometry") as HTMLElement;
+const backspace = document.getElementById("backspace") as HTMLInputElement;
 const dropdown = document.querySelector("#dropdown-menu") as HTMLElement;
 const dropdown_func = document.querySelector("#dropdown-func") as HTMLElement;
 const trig_btn = document.querySelector(".trigonometry") as HTMLElement;
 const func_btn = document.querySelector(".func") as HTMLElement;
 
-// Dropdown Functionality
+//-------------------------------------------Dropdown Functionality-------------------------------------------//
 
 trig_btn.addEventListener("click", () => {
     if (dropdown.style.display === "none") {
@@ -27,8 +26,7 @@ func_btn.addEventListener("click", () => {
     }
 });
 
-
-// Change Onclick button from DEG to RAD
+//-------------------------------Change Onclick button from DEG to RAD--------------------------------------//
 
 const btn = document.getElementById("deg") as HTMLElement;
 btn!.addEventListener("click", function (): void {
@@ -39,7 +37,7 @@ btn!.addEventListener("click", function (): void {
     }
 });
 
-// Degree to Radiant Functionality
+//--------------------------------------Degree to Radiant Functionality--------------------------------------//
 
 function btnDegToRad(inputVal: number, btn: string) {
     if (btn === "DEG") {
@@ -51,8 +49,7 @@ function btnDegToRad(inputVal: number, btn: string) {
     }
 }
 
-
-// MOD & 10x Functionality
+//--------------------------------------MOD & 10x Functionality--------------------------------------//
 
 function modOperator(num: string) {
     if (num.includes("mod")) {
@@ -69,7 +66,7 @@ function modOperator(num: string) {
     }
 }
 
-// Factorial Functionality
+//--------------------------------------Factorial Functionality--------------------------------------//
 
 function factorial(num: number): number {
     if (num < 0) return -1;
@@ -77,37 +74,38 @@ function factorial(num: number): number {
     else return num * factorial(num - 1);
 }
 
-// Trignometry Functionality
+//--------------------------------------Trignometry Functionality--------------------------------------//
 
 function trigno(type: string, num1: number) {
     switch (type) {
         case "Sin":
-            input.value = Math.sin((`${num1}` * Math.PI) / 180.0).toString();
+            input.value = Math.sin((+num1 * Math.PI) / 180.0).toString();
             break;
 
         case "Cos":
-            input.value = Math.cos((`${num1}` * Math.PI) / 180.0).toString();
+            input.value = Math.cos((+num1 * Math.PI) / 180.0).toString();
             break;
 
         case "Tan":
-            input.value = Math.tan((`${num1}` * Math.PI) / 180.0).toString();
+            input.value = Math.tan((+num1 * Math.PI) / 180.0).toString();
             break;
     }
 }
 
-// +/- Functionality
+//--------------------------------------+/- Functionality--------------------------------------//
 
 function plusMinusOperator(num: string) {
     input.value = (-Number(num)).toString();
 }
 
-// Button Click Event
+//--------------------------------------Button Click Event--------------------------------------//
 
 buttons.forEach((btn) =>
     btn.addEventListener("click", (event) => {
         let inputVal = input.value.toString();
         if (event.target instanceof HTMLElement && event.target.innerText === "=") {
 
+            //--------------------------------Trigonometry Function--------------------------------//
             if (input.value.includes("Sin")) {
                 let trig = input.value;
                 let trig__num = trig.split(" ");
@@ -116,7 +114,6 @@ buttons.forEach((btn) =>
                 trigno(type, numArray);
             }
 
-
             else if (input.value.includes("Cos")) {
                 let trig = input.value;
                 let trig__num = trig.split(" ");
@@ -124,7 +121,6 @@ buttons.forEach((btn) =>
                 let type = trig__num[0];
                 trigno(type, numArray);
             }
-
 
             else if (input.value.includes("Tan")) {
                 let trig = input.value;
@@ -151,7 +147,8 @@ buttons.forEach((btn) =>
             }
         }
 
-        // Backspace Event
+        //--------------------------------------Backspace Event--------------------------------------//
+
         else if (event.target instanceof HTMLElement && event.target.innerText === "") {
             let backSpaceVal = inputVal.substring(0, inputVal.length - 1);
             input.value = backSpaceVal;
@@ -170,10 +167,6 @@ buttons.forEach((btn) =>
             input.value = Math.pow(3, Number(input.value)).toString();
         }
 
-        else if (event.target instanceof HTMLElement && event.target.innerText === "3n") {
-            input.value = Math.pow(3, Number(input.value)).toString();
-        }
-
         else if (event.target instanceof HTMLElement && event.target.innerText === "n3") {
             input.value = Math.pow(Number(input.value), 3).toString();
         }
@@ -185,19 +178,6 @@ buttons.forEach((btn) =>
         else if (event.target instanceof HTMLElement && event.target.innerText === "MR") {
             const storedValue = localStorage.getItem("inputVal");
             input.value = storedValue ?? "";
-        }
-
-        else if (event.target instanceof HTMLElement && event.target.innerText === "MR") {
-            input.value = localStorage.getItem("inputVal") ?? "";
-        }
-
-        // else if (event.target instanceof HTMLElement && event.target.innerText === "MC") {
-        //     input.value = localStorage.removeItem("inputVal") ?? "";
-        // }
-
-        else if (event.target instanceof HTMLElement && event.target.innerText === "MC") {
-            localStorage.removeItem("inputVal");
-            input.value = "";
         }
 
         else if (event.target instanceof HTMLElement && event.target.innerText === "MC") {
@@ -255,6 +235,58 @@ buttons.forEach((btn) =>
             input.value = factorial(Number(input.value)).toString();
         }
 
+        else if (event.target instanceof HTMLElement && event.target.innerText === "xy") {
+            input.value += "^";
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "1/x") {
+            input.value = `1/`;
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "|x|") {
+            input.value = Math.abs(+input.value).toString();
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "√") {
+            input.value = Math.sqrt(+input.value).toString();
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "10 x") {
+            input.value = "10*";
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "log") {
+            input.value = (Math.log(+input.value) / Math.LN10).toString();
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "ln") {
+            input.value = Math.log(+input.value).toString();
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "+/-") {
+            plusMinusOperator(input.value);
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "Round") {
+            input.value = Math.round(+input.value).toString();;
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "Ceil") {
+            input.value = Math.ceil(+input.value).toString();;
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "Floor") {
+            input.value = Math.floor(+input.value).toString();;
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "DEG") {
+            btnDegToRad(+input.value, "DEG");
+        }
+
+        else if (event.target instanceof HTMLElement && event.target.innerText === "RAD") {
+            btnDegToRad(+input.value, "RAD");
+        }
+
         else if (event.target instanceof HTMLElement && event.target.innerText === "sin") {
             input.value = "Sin " + input.value;
         }
@@ -302,3 +334,4 @@ buttons.forEach((btn) =>
         }
     })
 );
+
